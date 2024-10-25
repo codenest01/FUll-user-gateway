@@ -1,0 +1,28 @@
+## Full user passthrough system
+
+what
+
+1. signup
+2. login
+3. verifyAccount
+4. resetPassword
+5. home
+6. edit_profile 
+
+models
+
+signup_model ==> username , email , passwod , verifyCode and timeStamps:true ✔
+
+
+routes 
+
+signup_route ==> parse above data to database , bcrpt password , restrict same usernames & email ✔
+login_route ==> generate a  jwt token , check if verifyCode: true then loggedIn successfully ✔
+verifyAcc_route ==> if verifyCode : flase , bcrypt otp must send to email and verifyAcc_route check otp validation ✔
+resetPassword_route ==> an otp must send to user and and resetPassword_route must comapre that otp and update-password with new password ✔
+
+home_route ==> a page that show user its profile ✔
+edit_prof_route ==> user can update its username ✔
+
+
+Note : otp must be valid for 3 minutes and user can request otp after 1 minute
